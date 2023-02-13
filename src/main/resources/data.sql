@@ -1,3 +1,7 @@
+-- 테스트 계정
+insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
+('jsc', 'asdf1234', 'jsc', 'jsc@eamil.com', 'I am Jsc.', now(), 'jsc', now(), 'jsc')
+;
 
 -- 게시글
 insert into article (title, content, hashtag, created_by, modified_by, created_at, modified_at) values ('In hac habitasse platea dictumst.', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', '#Teal', 'Roseann', 'Bethena', '2022-03-13 13:27:08', '2022-05-02 21:47:09');
