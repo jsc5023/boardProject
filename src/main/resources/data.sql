@@ -1,6 +1,6 @@
 -- 테스트 계정
 insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
-('jsc', 'asdf1234', 'jsc', 'jsc@eamil.com', 'I am Jsc.', now(), 'jsc', now(), 'jsc')
+('jsc', 'asdf1234', 'Jsc', 'jsc@eamil.com', 'I am Jsc.', now(), 'jsc', now(), 'jsc')
 ;
 
 -- 게시글
@@ -153,7 +153,7 @@ insert into article_comment (article_id, user_account_id, content, created_by, m
 insert into article_comment (article_id, user_account_id, content, created_by, modified_by, created_at, modified_at) values (37, 1, 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 'Wiatt', 'Karola', '2023-01-09 08:04:00', '2022-02-09 14:29:41');
 insert into article_comment (article_id, user_account_id, content, created_by, modified_by, created_at, modified_at) values (85, 1, 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', 'Alyda', 'Octavia', '2022-03-15 00:46:22', '2022-12-25 04:58:47');
 insert into article_comment (article_id, user_account_id, content, created_by, modified_by, created_at, modified_at) values (18, 1, 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', 'Hagen', 'Mufi', '2022-10-03 12:27:31', '2022-07-04 22:29:46');
-insert into article_comment (article_id, user_account_id, content, created_by, modified_by, created_at, modified_at) values (115, 1, 'Anjanette', 'Wendeline', '2022-07-27 16:56:44', '2022-03-29 17:54:48');
+insert into article_comment (article_id, user_account_id, content, created_by, modified_by, created_at, modified_at) values (115, 1, 'Quisque porta volutpat erat.', 'Anjanette', 'Wendeline', '2022-07-27 16:56:44', '2022-03-29 17:54:48');
 insert into article_comment (article_id, user_account_id, content, created_by, modified_by, created_at, modified_at) values (11, 1, 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 'Jorry', 'Francisca', '2022-12-29 00:49:09', '2022-05-20 09:46:16');
 insert into article_comment (article_id, user_account_id, content, created_by, modified_by, created_at, modified_at) values (29, 1, 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 'Bald', 'Dara', '2022-11-14 14:53:16', '2022-12-27 17:09:31');
 insert into article_comment (article_id, user_account_id, content, created_by, modified_by, created_at, modified_at) values (7, 1, 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 'Gaby', 'Sydney', '2022-06-23 08:38:13', '2022-02-27 09:22:15');
