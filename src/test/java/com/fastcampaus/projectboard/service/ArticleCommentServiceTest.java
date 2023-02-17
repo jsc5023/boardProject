@@ -76,7 +76,7 @@ class ArticleCommentServiceTest {
         sut.saveArticleComment(dto);
 
         // Then
-        then(articleCommentRepository).should().getReferenceById(dto.articleId());
+        then(articleRepository).should().getReferenceById(dto.articleId());
         then(articleCommentRepository).shouldHaveNoInteractions();
     }
 
