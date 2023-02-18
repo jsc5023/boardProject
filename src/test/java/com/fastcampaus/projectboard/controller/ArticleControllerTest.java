@@ -205,7 +205,6 @@ class ArticleControllerTest {
 
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
-                1L,
                 "jsc",
                 "pw",
                 "jsc@email.com",
