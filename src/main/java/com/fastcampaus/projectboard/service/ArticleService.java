@@ -1,10 +1,12 @@
 package com.fastcampaus.projectboard.service;
 
 import com.fastcampaus.projectboard.domain.Article;
-import com.fastcampaus.projectboard.domain.type.SearchType;
+import com.fastcampaus.projectboard.domain.UserAccount;
+import com.fastcampaus.projectboard.domain.constant.SearchType;
 import com.fastcampaus.projectboard.dto.ArticleDto;
 import com.fastcampaus.projectboard.dto.ArticleWithCommentsDto;
 import com.fastcampaus.projectboard.repository.ArticleRepository;
+import com.fastcampaus.projectboard.repository.UserAccountRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -14,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j // 로그 찍는 용도
 @RequiredArgsConstructor
@@ -22,6 +23,7 @@ import java.util.Optional;
 @Service
 public class ArticleService {
     private final ArticleRepository articleRepository;
+    private final UserAccountRepository userAccountRepository;
 
     @Transactional(readOnly = true)
     public Page<ArticleDto> searchArticles(SearchType searchType, String searchKeyword, Pageable pageable) {
@@ -39,26 +41,33 @@ public class ArticleService {
     }
 
     @Transactional(readOnly = true)
-    public ArticleWithCommentsDto getArticle(long articleId) {
+    public ArticleWithCommentsDto getArticleWithComments(long articleId) {
         return articleRepository.findById(articleId)
                 .map(ArticleWithCommentsDto::from)
                 .orElseThrow(() -> new EntityNotFoundException("게시글이 없습니다 - articleId: " + articleId));
     }
 
-    public void saveArticle(ArticleDto dto) {
-        articleRepository.save(dto.toEntity());
+    @Transactional(readOnly = true)
+    public ArticleDto getArticle(long articleId) {
+        return articleRepository.findById(articleId)
+                .map(ArticleDto::from)
+                .orElseThrow(() -> new EntityNotFoundException("게시글이 없습니다 - articleId: " + articleId));
     }
 
-    public void updateArticle(ArticleDto dto) {
+    public void saveArticle(ArticleDto dto) {
+        UserAccount userAccount = userAccountRepository.getReferenceById(dto.userAccountDto().userId());
+        articleRepository.save(dto.toEntity(userAccount));
+    }
+
+    public void updateArticle(Long articleId, ArticleDto dto) {
         try {
-            Article article = articleRepository.getReferenceById(dto.id());
+            Article article = articleRepository.getReferenceById(articleId);
             if(dto.title() != null) { article.setTitle(dto.title()); }
             if(dto.content() != null) { article.setContent(dto.content()); }
             article.setHashtag(dto.hashtag()); // class level @Transactional로 인해 update 쿼리가 자동실행 save 필요없음
         } catch (EntityNotFoundException e) {
             log.warn("게시글 업데이트 실패. 게시글을 찾을 수 없습니다 - dto: {}", dto);
         }
-
     }
 
     public void deleteArticle(long articleId) {
@@ -81,4 +90,5 @@ public class ArticleService {
     public List<String> getHashtags() {
         return articleRepository.findAllDistinctHashtags();
     }
+
 }
