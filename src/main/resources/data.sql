@@ -1,10 +1,10 @@
 -- 테스트 계정
 insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
-('jsc', 'asdf1234', 'Jsc', 'jsc@eamil.com', 'I am Jsc.', now(), 'jsc', now(), 'jsc')
+('jsc', '{noop}asdf1234', 'Jsc', 'jsc@eamil.com', 'I am Jsc.', now(), 'jsc', now(), 'jsc')
 ;
 
 insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
-    ('jsc2', 'asdf1234', 'Jsc2', 'jsc2@eamil.com', 'I am Jsc2.', now(), 'jsc2', now(), 'jsc2')
+    ('jsc2', '{noop}asdf1234', 'Jsc2', 'jsc2@eamil.com', 'I am Jsc2.', now(), 'jsc2', now(), 'jsc2')
 ;
 
 
