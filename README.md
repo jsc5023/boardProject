@@ -26,6 +26,7 @@ Spring Boot
 * Spring Boot DevTools
 * Spring Configuration Processor
 
-QueryDSL
-Bootstrap
-Heroku
+그 외
+
+* QueryDSL
+* Bootstrap
