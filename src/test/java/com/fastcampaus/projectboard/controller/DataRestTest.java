@@ -19,11 +19,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 @AutoConfigureMockMvc
 @SpringBootTest
-public class DataRestTest {
+class DataRestTest {
 
     private MockMvc mvc;
 
-    public DataRestTest(@Autowired MockMvc mvc) {
+    DataRestTest(@Autowired MockMvc mvc) {
         this.mvc = mvc;
     }
 
