@@ -217,8 +217,6 @@ class ArticleServiceTest {
         given(userAccountRepository.getReferenceById(dto.userAccountDto().userId())).willReturn(createUserAccount());
         given(hashtagService.parseHashtagNames(dto.content())).willReturn(expectedHashtagNames);
         given(hashtagService.findHashtagsByNames(expectedHashtagNames)).willReturn(expectedHashtags);
-        then(hashtagService).should().parseHashtagNames(dto.content());
-        then(hashtagService).should().findHashtagsByNames(expectedHashtagNames);
         given(articleRepository.save(any(Article.class))).willReturn(createArticle());
 
         // When
@@ -285,7 +283,7 @@ class ArticleServiceTest {
 
     @DisplayName("게시글 작성자가 아닌 사람이 수정 정보를 입력하면, 아무 것도 하지 않는다.")
     @Test
-    void givenModifiedArticleInfoWithDifferentUser_whenUpdatingArticle_thenDoesNothing() {
+        void givenModifiedArticleInfoWithDifferentUser_whenUpdatingArticle_thenDoesNothing() {
         // Given
         Long differentArticleId = 22L;
         Article differentArticle = createArticle(differentArticleId);
@@ -356,12 +354,12 @@ class ArticleServiceTest {
     }
 
     private UserAccount createUserAccount() {
-        return createUserAccount("uno");
+        return createUserAccount("jsc");
     }
 
     private UserAccount createUserAccount(String userId) {
         return UserAccount.of(
-                "jsc",
+                userId,
                 "password",
                 "jsc@email.com",
                 "JSC",

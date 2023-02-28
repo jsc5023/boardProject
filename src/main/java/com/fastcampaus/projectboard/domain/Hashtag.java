@@ -21,7 +21,7 @@ public class Hashtag extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     @ToString.Exclude // 순환참조 문제 해결용
     @ManyToMany(mappedBy = "hashtags")
