@@ -259,7 +259,7 @@ insert into article (user_id, title, content, created_by, modified_by, created_a
 #blue', 'Arie', 'Celestine', '2023-01-17 01:36:08', '2022-02-14 10:37:08');
 
 -- 댓글 1000개
-insert into article_comment (article_id, user_id, parent_comment_id, content, created_by, modified_by, created_at, modified_at) values (76, 'jsc', null, 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 'Gar', 'Joscelin', '2023-01-24 08:59:11', '2022-06-12 08:13:46');
+insert into article_comment (article_id, user_id, parent_comment_id, content, created_by, modified_by, created_at, modified_at) values (49, 'jsc', null, 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 'Gar', 'Joscelin', '2023-01-24 08:59:11', '2022-06-12 08:13:46');
 insert into article_comment (article_id, user_id, parent_comment_id, content, created_by, modified_by, created_at, modified_at) values (8, 'jsc', null, 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Alicea', 'Reagen', '2022-06-05 13:01:01', '2022-02-18 21:43:19');
 insert into article_comment (article_id, user_id, parent_comment_id, content, created_by, modified_by, created_at, modified_at) values (114, 'jsc', null, 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 'Sam', 'Neils', '2022-03-18 00:33:45', '2022-03-16 15:44:31');
 insert into article_comment (article_id, user_id, parent_comment_id, content, created_by, modified_by, created_at, modified_at) values (79, 'jsc', null, 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 'Gerek', 'Garwin', '2023-02-04 11:46:55', '2023-01-16 09:46:54');
@@ -1263,7 +1263,7 @@ insert into article_comment (article_id, user_id, parent_comment_id, content, cr
 -- 대댓글
 insert into article_comment (article_id, user_id, parent_comment_id, content, created_by, modified_by, created_at, modified_at) values
 (49, 'jsc', 1, '대댓글1', 'Jsc', 'Jsc', '2023-02-23 19:38:04', '2023-02-28 18:30:04'),
-(49, 'jsc2', 1, '대댓글2', 'Jsc', 'Jsc2', '2023-02-24 19:38:04', '2023-02-28 18:30:04'),
+(49, 'jsc2', 1, '대댓글2', 'Jsc2', 'Jsc2', '2023-02-24 19:38:04', '2023-02-28 18:30:04'),
 (49, 'jsc', 1, '대댓글3', 'Jsc', 'Jsc', '2023-02-25 19:38:04', '2023-02-28 18:30:04'),
 (49, 'jsc', 1, '대댓글4', 'Jsc', 'Jsc', '2023-02-26 19:38:04', '2023-02-28 18:30:04')
 ;
