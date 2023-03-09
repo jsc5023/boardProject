@@ -7,7 +7,7 @@
 * Intellij
 * java 17
 * Gradel
-* Srping Boot
+* Spring Boot
 
 ## 기술 세부 스택
 
